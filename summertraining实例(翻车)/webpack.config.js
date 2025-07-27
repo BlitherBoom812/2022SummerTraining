@@ -1,5 +1,5 @@
 var path = require('path');
-module.export = {
+module.exports = {
     mode: 'production',
     entry: './src/index.js',
     output: {
@@ -9,7 +9,7 @@ module.export = {
     module:{
         rules:[
             {
-                test:/.\m?js$/i, // .js or .mjs
+                test:/\.m?js$/i, // .js or .mjs
                 exclude:/node_modules/,
                 use:{
                     loader:'babel-loader',
@@ -32,7 +32,8 @@ module.export = {
             {
                 test:/\.css$/,
                 use:[
-                    'style-loader!css-loader'
+                    'style-loader',
+                    'css-loader'
                 ]
             }
         ]
